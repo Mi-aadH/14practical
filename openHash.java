@@ -50,3 +50,15 @@ public class openHash{
         }table [index ]= new Entry(key,value);
         size++;
     }
+     public String lookup (String key){
+        int index = hash(key);
+        int start = index ;
+
+        while (table[index]!=null){
+            if(table[index].key.equals(key)){
+               return table[index].value;
+            }index = (index +1) %m ;
+            if (index == start)break;
+
+        }return null;
+    }
