@@ -1,5 +1,5 @@
 // staring hasing project 
-
+import java.util.LinkedList;
 public class openHash{
 
     private static class Entry{
