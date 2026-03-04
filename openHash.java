@@ -1,7 +1,4 @@
 // staring hasing project 
-import java.io.*;
-import java.text.DecimalFormat;
-import java.util.*;
 
 public class openHash{
 
@@ -62,3 +59,17 @@ public class openHash{
 
         }return null;
     }
+public String remove(String key){
+     int index = hash(key);
+     int start = index ;
+
+     while (table[index]!=null){
+         if(table[index].key.equals(key)){
+             String val = table[index].value;
+             table[index] = null;
+             size--;
+             return val;
+         }index = (index +1) %m ;
+         if (index == start)break;
+    }return null;
+}
